@@ -17,12 +17,24 @@
             }
 
             li.new-list,div#new-div{
-                background-color:blue;
+                background-color:rgb(0, 0, 255);
             }
+
             div.grandkids li{
                 background-color:red;
             }
 
+            ul.kids>li{
+                background-color:green;
+            }
+
+            .add-border{
+                border: 1px solid rgb(0, 0, 0);
+            }
+            
+            .add-background{
+                background-color:pink;
+            }
         </style>
     </head>
     <body>
@@ -36,6 +48,8 @@
                 <li><a href="#class">class</a></li>
                 <li><a href="#compound">compound</a></li>
                 <li><a href="#descendant">descendant</a></li>
+                <li><a href="#child">child</a></li>
+                <li><a href="#multiple">multiple</a></li>
             </ul>
         </nav> 
     </header>           
@@ -58,7 +72,7 @@
 
         <fieldset>
             <legend><a id="class">class</a></legend>
-            <p>Classes can be applied to more than one item per page</p>
+            <p>more than one class can be applied to an element</p>
             <p>Here's how we hook a class attribute to an element:</p>
             <pre><code>class="my-list"</code></pre>
             <p>Here's how the CSS is applied to the element:</p>
@@ -99,7 +113,7 @@
             <p>descendant selectors let us access elements at any depth within the current element</p>
             <p>Here's how the CSS is applied to the elements:</p>
             <pre><code>div.grandkids li{
-    background-color:blue;
+    background-color:red;
 }</code></pre>
 
             <p>Here's what it looks like:</p>
@@ -108,6 +122,41 @@
                     <li>I'm in an li inside the grandkids div</li>
                     <li>I'm in an li inside the grandkids div</li>
                     <li>I'm in an li inside the grandkids div</li>
+                </ul>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="child">child</a></legend>
+            <p>A child selector lets us access the next immediate elements inside the current element </p>s
+            <p>Here's how the CSS is applied to the elements:</p>
+            <pre><code>ul.kids>li{
+    background-color:green;
+}</code></pre>
+
+            <p>Here's what it looks like:</p>
+            <div>
+                <ul class="kids">
+                    <li>I'm in an li inside the kids ul</li>
+                    <li>I'm in an li inside the kids ul</li>
+                    <li>I'm in an li inside the kids ul</li>
+
+                </ul>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="multiple">multiple classes</a></legend>
+            <p>Classes can be applied to more than one item per page</p>
+            <p>Here's how we hook a class attribute to an element:</p>
+            <pre><code>class="add-background add-border"</code></pre>
+
+            <p>Here's what it looks like:</p>
+            <div>
+                <ul>
+                    <li class="add-background add-border">I'm in an li with multiple classes</li>
+                    <li class="add-background add-border">I'm in an li with multiple classes</li>
+                    <li class="add-background add-border">I'm in an li with multiple classes</li>
                 </ul>
             </div>
         </fieldset>
